@@ -1,8 +1,10 @@
 package keywordDriven;
 
 import Utility.Constants;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.concurrent.TimeUnit;
@@ -11,7 +13,8 @@ public class ActionKeywords {
     public static WebDriver driver;
 
     public void openBrowser() {
-        driver = new FirefoxDriver();
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
         driver.manage().window().maximize();
     }
 
